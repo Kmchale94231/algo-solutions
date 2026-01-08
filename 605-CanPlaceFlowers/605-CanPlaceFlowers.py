@@ -1,18 +1,24 @@
-# Last updated: 1/8/2026, 11:51:39 AM
+# Last updated: 1/8/2026, 12:08:46 PM
 1class Solution(object):
-2    def canPlaceFlowers(self, flowerbed, n):
-3        array = [0] + flowerbed + [0]
-4        i = 1
-5        
-6        while i < len(array) - 1:
-7            if array[i - 1] == 0 and array[i] == 0 and array[i + 1] == 0:
-8                array[i] = 1
-9                n -= 1
-10                i += 2
-11            else:
-12                i += 1
-13        
-14        if n <= 0:
-15            return True 
-16        
-17        return n <= 0
+2    def reverseVowels(self, s):
+3        vowels = "aeiouAEIOU"
+4        string = list(s)
+5        l, r = 0, len(string) - 1 
+6
+7        while l < r:
+8            if string[l] in vowels and string[r] in vowels:
+9                string[l], string[r] = string[r], string[l]
+10                l += 1
+11                r -= 1
+12            elif string[l] not in vowels:
+13                l += 1
+14            elif string[r] not in vowels:
+15                r -= 1
+16        return "".join(string) 
+17            
+18
+19
+20            
+21
+22            
+23        
